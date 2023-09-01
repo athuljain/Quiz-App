@@ -26,7 +26,7 @@ export default function Questions() {
                         value={checked}
                         name="options"
                         id={`q${i}-option`}
-                        onChange={onSelect} // Remove the parentheses here
+                        onChange={onSelect} 
                     />
                     <label className="text-primary" htmlFor={`q${i}-option`}>
                         {q}
