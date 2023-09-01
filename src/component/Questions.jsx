@@ -7,7 +7,7 @@ export default function Questions(){
 
     function onSelect(){
         setChecked(true)
-        console.log('radio button clicked');
+        console.log('radio button clicked ');
     }
 
     return(
