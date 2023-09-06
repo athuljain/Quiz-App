@@ -24,7 +24,7 @@ export default function Main(){
                     ref={inputRef}
                     className="userid"
                     type="text"
-                    placeholder="userName*"
+                    placeholder=" userName* "
                     value={userName} // Use the input value from state
                     onChange={handleInputChange} // Handle input changes
                 />

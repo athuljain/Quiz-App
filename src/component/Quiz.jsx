@@ -4,17 +4,17 @@ import Questions from "./Questions";
 export default function Quiz(){
 
         function onNext(){
-            console.log("on next click");
+            console.log("On next click");
         } 
         function onPrev(){
-            console.log("on Prev click");
+            console.log("On Prev click");
         } 
 
 
     return(
         <div className="container">
             <h1 className="title text-light"> Quiz Application </h1>
-            <h1 className="title text-light"> Java Script </h1>
+            <h3 className="title text-light"> Java Script </h3>
             {/* display questions */}
        <Questions />
             <div className="grid">
