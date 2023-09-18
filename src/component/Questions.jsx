@@ -1,11 +1,25 @@
 import { useEffect, useState } from "react";
 import { data } from "./database/Data";
 
+
+
+// coustom Hook
+
+import { useFetchQuestion } from "../hooks/FetchQuestion";
+
+
 export default function Questions() {
   const [checked, setChecked] = useState(undefined);
+
+ const [{isLoading,apiData,serverError}]=  useFetchQuestion()
+
   const question = data[0];
 
   useEffect(() => {
+
+    //console.log("isLoading:",isLoading);
+    console.log("apiData:",apiData);
+    // console.log("serverError:",serverError);
    // console.log(question);
   }, [question]);
 
