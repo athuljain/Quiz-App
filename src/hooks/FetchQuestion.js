@@ -39,7 +39,7 @@ export const useFetchQuestion = () => {
 
 // MoveAction Dispatch Function
 
-export const MoveNextQuestion =()=> async => (dispatch) {
+export const MoveNextQuestion =()=> async(dispatch) => {
   try{
     dispatch(Action.moveNextAction)
      
