@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { data } from "./database/Data";
+// import { data } from "./database/Data";
 
 
 
@@ -14,12 +14,13 @@ export default function Questions() {
 
  const [{isLoading,apiData,serverError}]=  useFetchQuestion()
 
-  const question = data[0];
+  // const question = data[0];
 
-  const {questions}=   useSelector(state => state.questions.queue[state.questions.trace])
+  const questions=   useSelector(state => state.questions.queue[state.questions.trace])
+  const trace = useSelector(state => state.questions.trace)
 
   useEffect(()=>{
-       console.log(questions );
+       console.log( questions );
   })
 
 
@@ -43,9 +44,9 @@ if(serverError) return <h3 className="text-light">{serverError || "Unknown Error
 
   return (
     <div className="questions">
-      <h2 className="text-light">{question.question}</h2>
-      <ul key={question.id}>
-        {question.options.map((q, i) => (
+      <h2 className="text-light">{questions?.question}</h2>
+      <ul key={questions?.id}>
+        {questions?.options.map((q, i) => (
           <li key={i}>
             <input
               type="radio"
