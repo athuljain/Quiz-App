@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 
-export const ResultReducer= createSlice({
+export const resultReducer= createSlice({
     name :'resul',
     initialState : {
         userId :null,
@@ -10,10 +10,13 @@ export const ResultReducer= createSlice({
     reducers :{
         setUserId : (state,action)=>{
             state.userId = action.payload
+        },
+        pushResultAction : (state,action)=>{
+            state.result.push(action.payload)
         }
     }
 })
     
-export const { setUserId} = ResultReducer.actions
+export const { setUserId, pushResultAction} = resultReducer.actions
 
-export default ResultReducer.reducer
+export default resultReducer.reducer
