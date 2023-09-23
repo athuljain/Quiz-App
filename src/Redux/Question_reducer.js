@@ -14,14 +14,20 @@ export const QuestionReducer = createSlice({
         queue: action.payload,
       };
     },
-    moveNextAction :(state, action)=>{
+    moveNextAction :(state)=>{
       return {
         ...state,
         trace: state.trace + 1
+      }
+    },
+    movePrevAction : (state)=>{
+      return{
+        ...state, 
+        trace: state.trace - 1
       }
     }
   },
 });
 
-export const { startExamAction, moveNextAction } = QuestionReducer.actions;
+export const { startExamAction, moveNextAction ,movePrevAction } = QuestionReducer.actions;
 export default QuestionReducer.reducer;
