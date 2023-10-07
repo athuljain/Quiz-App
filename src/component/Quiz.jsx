@@ -30,7 +30,7 @@ export default function Quiz() {
       dispatch(MoveNextQuestion())
       //dispatch( pushAnswer(check))
 
-      // inser
+      
       if (result.length <= trace){
         dispatch(pushAnswer(check))
       }
@@ -62,13 +62,13 @@ export default function Quiz() {
       {/* display questions */}
       <Questions onChecked={onChecked} />
       <div className="grid">
-        <button onClick={onPrev} className="btn prev">
+       { trace > 0 ?  <button onClick={onPrev} className="btn prev">
           Prev
-        </button>
+        </button> : <div></div> }
         <button onClick={onNext} className="btn next">
           Next
         </button>
       </div>
-    </div>
+    </div>   
   );
 }

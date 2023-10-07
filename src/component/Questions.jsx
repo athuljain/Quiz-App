@@ -14,6 +14,7 @@ import { updateResult } from "../hooks/setResult";
 export default function Questions({onChecked}) {
   const [checked, setChecked] = useState(undefined);
   const {trace} = useSelector(state=>state.questions)
+  const result = useSelector(state => state.result.result)
 
  const [{isLoading,apiData,serverError}]=  useFetchQuestion()
 
@@ -65,7 +66,7 @@ if(serverError) return <h3 className="text-light">{serverError || "Unknown Error
             <label className="text-primary" htmlFor={`q${i}-option`}>
               {q}
             </label>
-            <div className="check checked"></div>
+            <div className={`check ${result[trace] == i ? 'checked' : ''}`} ></div>
           </li>
         ))}
       </ul>
