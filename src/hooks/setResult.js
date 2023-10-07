@@ -7,3 +7,11 @@ await dispatch(Action.pushResultAction(result))
     console.log(error);
 }
 }
+
+export const updateResult = (index) => async (dispatch)=>{
+   try{
+    dispatch(Action.updateResultAction(index))
+   } catch(error){
+    console.log(error);
+   }
+}

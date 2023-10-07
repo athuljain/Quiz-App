@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 // import { data } from "./database/Data";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 
 // coustom Hook
 
 import { useFetchQuestion } from "../hooks/FetchQuestion";
+//import { updateResultAction } from "../Redux/ResultReducer";
+import { updateResult } from "../hooks/setResult";
 
 
 
 export default function Questions({onChecked}) {
   const [checked, setChecked] = useState(undefined);
+  const {trace} = useSelector(state=>state.questions)
 
  const [{isLoading,apiData,serverError}]=  useFetchQuestion()
 
@@ -18,10 +21,12 @@ export default function Questions({onChecked}) {
 
   const questions=   useSelector(state => state.questions.queue[state.questions.trace])
   //const trace = useSelector(state => state.questions.trace)
-
+console.log({trace,checked});
+    const dispatch=useDispatch()
   useEffect(()=>{
        // console.log( questions );
-  })
+       dispatch(updateResult({trace,checked}))
+  },[checked])
 
 
   // useEffect(() => {
@@ -36,6 +41,7 @@ export default function Questions({onChecked}) {
     // setChecked(true);
     console.log("radio button Clicked");
     onChecked(i)
+    setChecked(i)
   }
 
 
