@@ -4,11 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { resetAllAction } from "../Redux/Question_reducer";
 import { resetResultAction } from "../Redux/ResultReducer";
 import { useEffect } from "react";
-import {
-  attempts_Number,
-  earnPoints_Number,
-  flagResult,
-} from "../helper/Helper";
+import { attempts_Number, earnPoints_Number,flagResult} from "../helper/Helper";
 export default function Result() {
   const dispatch = useDispatch();
   const {
@@ -20,15 +16,15 @@ export default function Result() {
     console.log(attempts);
   });
 
-  const totalPoints = queue.lenght * 10;
+  const totalPoints = queue.length * 10; 
   const attempts = attempts_Number(result);
-  const earnPoints = earnPoints_Number(result, answers, 10);
-  const flag = flagResult(totalPoints, earnPoints);
+  const earnPoints = earnPoints_Number(result, answers, 10)
+  const flag = flagResult(totalPoints, earnPoints)
 
   function onRestart() {
     dispatch(resetAllAction());
     dispatch(resetResultAction());
-    console.log("on Restart");
+   // console.log("on Restart");
   }
   return (
     <div className="container">
@@ -59,10 +55,7 @@ export default function Result() {
         <div className="flex">
           <span>Quize Result</span>
           <span
-            style={{ color: `${flag ? "#2aff95" : "#ff2a66"}` }}
-            className="bold"
-          >
-            {flag ? "Passed" : "Failed"}{" "}
+            style={{ color : `${flag ? "#2aff95" : "#ff2a66" }` }} className='bold'>{flag ? "Passed" : "Failed"}
           </span>
         </div>
       </div>
