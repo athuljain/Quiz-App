@@ -36,6 +36,10 @@ export default function Quiz() {
       }
     }
 
+    // reset the value
+
+    setChecked(undefined)
+
     
   }
   function onPrev() {
