@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
 import ResultTable from "./ResultTable";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { resetAllAction } from "../Redux/Question_reducer";
 import { resetResultAction } from "../Redux/ResultReducer";
+import { useEffect } from "react";
 export default function Result() {
 
 
 const dispatch = useDispatch()
+const {questions : {queue,answers}, result :{result,userId}} = useSelector(state => state)
+
+useEffect(()=>{
+  console.log(result);
+})
 
   function onRestart() {
     dispatch(resetAllAction())

@@ -16,9 +16,9 @@ export default function Quiz() {
     const result=   useSelector(state => state.result.result)
     const {queue,trace}=   useSelector(state => state.questions)
   const dispatch = useDispatch()
-    useEffect(()=>{
-         console.log(state);
-    })
+    // useEffect(()=>{
+    //      console.log(state);
+    // })
 
 
 

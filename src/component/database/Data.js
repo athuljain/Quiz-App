@@ -1,4 +1,4 @@
-export const data=  [ 
+export const data= [ 
     {
         id: 1,
         question :"JavaScript is an _____ language",
@@ -19,3 +19,4 @@ export const data=  [
     } 
 
 ]
+export const answers=[0,1]

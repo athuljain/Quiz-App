@@ -30,13 +30,6 @@ console.log({trace,checked});
   },[checked])
 
 
-  // useEffect(() => {
-
-  //   //console.log("isLoading:",isLoading);
-  //   //console.log("apiData:",apiData);
-  //   // console.log("serverError:",serverError);
-  //  // console.log(question);
-  // }, [question]);
 
   function onSelect(i) {
     // setChecked(true);
