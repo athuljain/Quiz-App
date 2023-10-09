@@ -1,13 +1,24 @@
 import { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { setUserId } from "../Redux/ResultReducer";
 
 export default function Main() {
   const inputRef = useRef(null);
-  const [userName, setUserName] = useState(""); // Add state for input value
+  // const [userName, setUserName] = useState(""); // Add state for input value
 
-  const handleInputChange = (event) => {
-    setUserName(event.target.value); // Update the input value
-  };
+  // const handleInputChange = (event) => {
+  //   setUserName(event.target.value); // Update the input value
+  // };
+
+  const dispatch=useDispatch()
+
+  function startQuiz(){ 
+      if(inputRef.current?.value){
+          dispatch(setUserId(inputRef.current?.value))
+      }
+  }
+
 
   return (
     <div className="container">
@@ -25,12 +36,12 @@ export default function Main() {
           className="userid"
           type="text"
           placeholder=" userName* "
-          value={userName} // Use the input value from state
-          onChange={handleInputChange} // Handle input changes
+          //value={userName} // Use the input value from state
+          //onChange={handleInputChange} // Handle input changes
         />
       </form>
       <div className="start">
-        <Link className="btn" to={"/quiz"}>
+        <Link className="btn" onClick={startQuiz} to={"/quiz"}>
           {" "}
           Start Quiz{" "}
         </Link>
