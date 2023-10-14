@@ -33,7 +33,7 @@ export default function Result() {
       <div className="result flex-center">
         <div className="flex">
           <span>UserName :</span>
-          <span className="bold">athul </span>
+          <span className="bold">{userId} </span>
         </div>
         <div className="flex">
           <span>Total Quize Points :</span>
@@ -42,7 +42,7 @@ export default function Result() {
 
         <div className="flex">
           <span>Total Questions :</span>
-          <span className="bold">{queue.lenght || 0 } </span>
+          <span className="bold">{queue.length || 0 } </span>
         </div>
         <div className="flex">
           <span>Total attempts :</span>

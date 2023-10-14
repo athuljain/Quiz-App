@@ -1,4 +1,7 @@
+
+
 export default function ResultTable() {
+
   return (
     <div>
       <table>
@@ -14,7 +17,7 @@ export default function ResultTable() {
           <tr className="table-body">
             <td>athul</td>
             <td>03</td>
-            <td>20</td>
+            <td>earnPoints</td>
             <td>passed</td>
           </tr>
         </tbody>

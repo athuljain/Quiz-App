@@ -19,6 +19,7 @@ export default function Questions({onChecked}) {
  const [{isLoading,apiData,serverError}]=  useFetchQuestion()
 
   // const question = data[0];
+  
 
   const questions=   useSelector(state => state.questions.queue[state.questions.trace])
   //const trace = useSelector(state => state.questions.trace)
@@ -59,7 +60,7 @@ if(serverError) return <h3 className="text-light">{serverError || "Unknown Error
             <label className="text-primary" htmlFor={`q${i}-option`}>
               {q}
             </label>
-            <div className={`check ${result[trace] == i ? 'checked' : ''}`} ></div>
+            <div className={`check ${result[trace] === i ? 'checked' : ''}`} ></div>
           </li>
         ))}
       </ul>
